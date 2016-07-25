@@ -1,0 +1,363 @@
+﻿{
+    "_id" : 160614,
+    "appName" : "wsL",
+    "criticality" : "MC",
+    "mailContact" : "cheng.zhong@hpe.com;zhu-wei.ge@hpe.com;xiang.guan@hpe.com",
+    "mailEnabled" : false,
+    "sendMailCron" : "0 */30 * * * ?",
+    "availableEnv" : [ 
+        "ITG", 
+        "PRO"
+    ],
+    "customizedHCStandard" : [ 
+        {
+            "criticality" : "Error",
+            "hcType" : "Customized",
+            "resultValue" : "True",
+            "alertCondition" : "NotEqual",
+            "checkedKeys" : [ 
+                "WebClient AdminTool wsL[LogisticsWeb]", 
+                "WindowsService wsL[CRSDataloading]", 
+                "WindowsService wsL[PDIMDataloading]", 
+                "ShareFolder wsL", 
+                "MSMQ WSL"
+            ],
+            "checkedServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "C9W23333.itcs.hpecorp.net", 
+                "C4W23328.itcs.hpecorp.net", 
+                "C9W23329.itcs.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net", 
+                "C4W23318.itcs.hpecorp.net", 
+                "C4W23319.itcs.hpecorp.net", 
+                "C4W23314.itcs.hpecorp.net", 
+                "C4W23326.itcs.hpecorp.net", 
+                "G4W9738G.houston.hpecorp.net", 
+                "G9W8933G.houston.hpecorp.net", 
+                "G4W9734G.itcs.hpecorp.net", 
+                "G4W9735G.itcs.hpecorp.net"
+            ],
+            "isContinue" : false,
+            "isNecessary" : false
+        }, 
+        {
+            "criticality" : "Error",
+            "hcType" : "Customized",
+            "resultValue" : "OK",
+            "alertCondition" : "NotEqual",
+            "checkedKeys" : [ 
+                "DBConnStatus wsL", 
+                "WebService wsL[LogisticWebServices]"
+            ],
+            "checkedServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "C9W23333.itcs.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net", 
+                "C4W23322.itcs.hpecorp.net"
+            ],
+            "isContinue" : false,
+            "isNecessary" : false
+        }
+    ],
+    "hcResultStatusMergeRule" : [ 
+        {
+            "aliasName" : "Availability",
+            "applyServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "C9W23333.itcs.hpecorp.net", 
+                "C4W23328.itcs.hpecorp.net", 
+                "C9W23329.itcs.hpecorp.net", 
+                "C4W23326.itcs.hpecorp.net", 
+                "C4W23324.itcs.hpecorp.net", 
+                "C9W23325.itcs.hpecorp.net", 
+                "G4W9738G.houston.hpecorp.net", 
+                "G9W8933G.houston.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net", 
+                "C4W23322.itcs.hpecorp.net", 
+                "C4W23318.itcs.hpecorp.net", 
+                "C4W23319.itcs.hpecorp.net", 
+                "C4W23314.itcs.hpecorp.net", 
+                "G4W9734G.itcs.hpecorp.net", 
+                "G4W9735G.itcs.hpecorp.net", 
+                "C4W23312.itcs.hpecorp.net", 
+                "C4W23313.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "Availability"
+            ]
+        }, 
+        {
+            "aliasName" : "Hardware",
+            "applyServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "C9W23333.itcs.hpecorp.net", 
+                "C4W23328.itcs.hpecorp.net", 
+                "C9W23329.itcs.hpecorp.net", 
+                "C4W23326.itcs.hpecorp.net", 
+                "C4W23324.itcs.hpecorp.net", 
+                "C9W23325.itcs.hpecorp.net", 
+                "G4W9738G.houston.hpecorp.net", 
+                "G9W8933G.houston.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net", 
+                "C4W23322.itcs.hpecorp.net", 
+                "C4W23318.itcs.hpecorp.net", 
+                "C4W23319.itcs.hpecorp.net", 
+                "C4W23314.itcs.hpecorp.net", 
+                "G4W9734G.itcs.hpecorp.net", 
+                "G4W9735G.itcs.hpecorp.net", 
+                "C4W23312.itcs.hpecorp.net", 
+                "C4W23313.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "Mem", 
+                "C", 
+                "E", 
+                "F"
+            ]
+        }, 
+        {
+            "aliasName" : "DB Connection",
+            "applyServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "DBConnStatus wsL"
+            ]
+        }, 
+        {
+            "aliasName" : "Web Service",
+            "applyServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "C9W23333.itcs.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net", 
+                "C4W23322.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "WebService wsL[LogisticWebServices]", 
+                "WebClient AdminTool wsL[LogisticsWeb]"
+            ]
+        }, 
+        {
+            "aliasName" : "Windows Service",
+            "applyServers" : [ 
+                "C4W23328.itcs.hpecorp.net", 
+                "C9W23329.itcs.hpecorp.net", 
+                "C4W23318.itcs.hpecorp.net", 
+                "C4W23319.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "WindowsService wsL[CRSDataloading]", 
+                "WindowsService wsL[PDIMDataloading]"
+            ]
+        }, 
+        {
+            "aliasName" : "Sharefolder",
+            "applyServers" : [ 
+                "C4W23332.itcs.hpecorp.net", 
+                "G4W9738G.houston.hpecorp.net", 
+                "G9W8933G.houston.hpecorp.net", 
+                "C4W23321.itcs.hpecorp.net", 
+                "G4W9734G.itcs.hpecorp.net", 
+                "G4W9735G.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "ShareFolder wsL"
+            ]
+        }, 
+        {
+            "aliasName" : "MSMQ",
+            "applyServers" : [ 
+                "C4W23314.itcs.hpecorp.net", 
+                "C4W23326.itcs.hpecorp.net"
+            ],
+            "targetKey" : [ 
+                "MSMQ WSL"
+            ]
+        }
+    ],
+    "healthCheckMap" : {
+        "ITG" : {
+            "appServerList" : [ 
+                {
+                    "serverName" : "c4w22599.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Monitor Server",
+                    "l7hcServicePort" : 0,
+                    "hcTypeList" : [ 
+                        "Customized"
+                    ],
+                    "serviceItems" : [ 
+                        ":4411/esGMonitor/esGMonitorTest/NewITGInfoMerge_wsL"
+                    ]
+                }, 
+                {
+                    "serverName" : "C4W23321.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Web Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23322.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Web Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23318.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Windows Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23319.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Windows Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23321.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Share Folder",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "G4W9734G.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Share Folder",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "G4W9735G.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Share Folder",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23314.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "MSMQ",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23312.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Report Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23313.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Report Service",
+                    "l7hcServicePort" : 0
+                }
+            ],
+            "clusterInfo" : [ 
+                {
+                    "sequence" : 0,
+                    "serverName" : "esginternalitg.itcs.hpecorp.net",
+                    "isGSLB" : true,
+                    "networkLevel" : 1,
+                    "suffix" : "/LogisticWebServices/wsLogistics.asmx",
+                    "servicePort" : 0,
+                    "isSSL" : true,
+                    "subServers" : [ 
+                        "C4W23321.itcs.hpecorp.net", 
+                        "C4W23322.itcs.hpecorp.net"
+                    ]
+                }
+            ]
+        },
+        "PRO" : {
+            "appServerList" : [ 
+                {
+                    "serverName" : "c4w22599.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Monitor Server",
+                    "l7hcServicePort" : 0,
+                    "hcTypeList" : [ 
+                        "Customized"
+                    ],
+                    "serviceItems" : [ 
+                        ":4411/esGMonitor/esGMonitorTest/NewPROInfoMerge_wsL"
+                    ]
+                }, 
+                {
+                    "serverName" : "C4W23332.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Web Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C9W23333.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Web Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23328.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Windows Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C9W23329.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Windows Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23332.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "ShareFolder",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "G9W8933G.houston.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "ShareFolder",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "G4W9738G.houston.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "ShareFolder",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23326.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "MSMQ",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23324.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Report Service",
+                    "l7hcServicePort" : 0
+                }, 
+                {
+                    "serverName" : "C4W23325.itcs.hpecorp.net",
+                    "platform" : "Linux",
+                    "serverType" : "Report Service",
+                    "l7hcServicePort" : 0
+                }
+            ],
+            "clusterInfo" : [ 
+                {
+                    "sequence" : 0,
+                    "serverName" : "esginternalitg.itcs.hpecorp.net",
+                    "isGSLB" : true,
+                    "networkLevel" : 1,
+                    "suffix" : "/LogisticWebServices/wsLogistics.asmx",
+                    "servicePort" : 0,
+                    "isSSL" : true,
+                    "subServers" : [ 
+                        "C4W23321.itcs.hpecorp.net", 
+                        "C4W23322.itcs.hpecorp.net"
+                    ]
+                }
+            ]
+        }
+    }
+}
